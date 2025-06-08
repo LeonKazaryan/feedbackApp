@@ -7,9 +7,10 @@ export interface Feedback {
   likes: number;
   dislikes: number;
   date: number;
+  order?: number; // Optional order for custom sorting
 }
 
-export type SortType = "date" | "likes";
+export type SortType = "date" | "likes" | "custom";
 export type FilterType = "all" | "popular" | "new";
 
 interface FeedbackState {
@@ -20,6 +21,7 @@ interface FeedbackState {
 
 type FeedbackAction =
   | { type: "ADD"; payload: string }
+  | { type: "ADD_WITH_STATS"; payload: Omit<Feedback, "id"> }
   | { type: "REMOVE"; payload: number }
   | { type: "VOTE"; payload: { id: number; voteType: "like" | "dislike" } }
   | { type: "SET_SORT"; payload: SortType }
@@ -60,6 +62,20 @@ const feedbackReducer = (
             likes: 0,
             dislikes: 0,
             date: Date.now(),
+            order: state.feedbacks.length, // Add to the end
+          },
+        ],
+      };
+
+    case "ADD_WITH_STATS":
+      return {
+        ...state,
+        feedbacks: [
+          ...state.feedbacks,
+          {
+            id: Date.now(),
+            ...action.payload,
+            order: state.feedbacks.length, // Add to the end
           },
         ],
       };
@@ -103,13 +119,19 @@ const feedbackReducer = (
       };
 
     case "REORDER":
+      const { oldIndex, newIndex } = action.payload;
+      const newFeedbacks = [...state.feedbacks];
+      const [movedItem] = newFeedbacks.splice(oldIndex, 1);
+      newFeedbacks.splice(newIndex, 0, movedItem);
+
+      // Update order for all items
       return {
         ...state,
-        feedbacks: arrayMove(
-          state.feedbacks,
-          action.payload.oldIndex,
-          action.payload.newIndex
-        ),
+        feedbacks: newFeedbacks.map((feedback, index) => ({
+          ...feedback,
+          order: index,
+        })),
+        sortBy: "custom", // Automatically switch to custom sorting
       };
 
     case "IMPORT_STATE":
@@ -184,9 +206,15 @@ export const getSortedAndFilteredFeedbacks = (
 
   // Apply sorting
   return filtered.sort((a, b) => {
-    if (sortBy === "date") {
-      return b.date - a.date;
+    switch (sortBy) {
+      case "date":
+        return b.date - a.date;
+      case "likes":
+        return b.likes - b.dislikes - (a.likes - a.dislikes);
+      case "custom":
+        return (a.order ?? 0) - (b.order ?? 0);
+      default:
+        return 0;
     }
-    return b.likes - b.dislikes - (a.likes - a.dislikes);
   });
 };

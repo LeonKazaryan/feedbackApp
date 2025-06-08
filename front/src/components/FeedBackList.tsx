@@ -65,32 +65,44 @@ const FeedbackList = () => {
   }
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-    >
-      <SortableContext
-        items={sortedAndFilteredFeedbacks.map((f) => f.id)}
-        strategy={verticalListSortingStrategy}
+    <>
+      {state.sortBy === "custom" && (
+        <motion.div
+          className="drag-hint"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          ✨ Drag items to reorder them! Your custom order will be saved.
+        </motion.div>
+      )}
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
       >
-        <div className="feedback-list">
-          <AnimatePresence>
-            {sortedAndFilteredFeedbacks.map((feedback) => (
-              <motion.div
-                key={feedback.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FeedbackItem feedback={feedback} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-      </SortableContext>
-    </DndContext>
+        <SortableContext
+          items={sortedAndFilteredFeedbacks.map((f) => f.id)}
+          strategy={verticalListSortingStrategy}
+        >
+          <div className="feedback-list">
+            <AnimatePresence>
+              {sortedAndFilteredFeedbacks.map((feedback) => (
+                <motion.div
+                  key={feedback.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FeedbackItem feedback={feedback} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </SortableContext>
+      </DndContext>
+    </>
   );
 };
 

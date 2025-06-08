@@ -16,6 +16,7 @@ const FeedbackControls = () => {
         >
           <option value="date">Date</option>
           <option value="likes">Likes</option>
+          <option value="custom">Custom Order</option>
         </select>
       </div>
 

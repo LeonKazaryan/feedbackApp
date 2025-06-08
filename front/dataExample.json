@@ -1,0 +1,146 @@
+{
+  "feedbacks": [
+    {
+      "id": 1749374079267,
+      "text": "This app is amazing! The UI is so intuitive and user-friendly.",
+      "likes": 45,
+      "dislikes": 2,
+      "date": 1749374079267
+    },
+    {
+      "id": 1749374083229,
+      "text": "Could use some performance improvements when loading large datasets.",
+      "likes": 23,
+      "dislikes": 5,
+      "date": 1749374083229
+    },
+    {
+      "id": 1749374098882,
+      "text": "Love the new dark mode feature! Makes it much easier on the eyes.",
+      "likes": 67,
+      "dislikes": 3,
+      "date": 1749374098882
+    },
+    {
+      "id": 1749374106447,
+      "text": "The search functionality needs work - sometimes returns irrelevant results.",
+      "likes": 12,
+      "dislikes": 1,
+      "date": 1749374106447
+    },
+    {
+      "id": 1749374123364,
+      "text": "Great job on the latest update! The new features are exactly what we needed.",
+      "likes": 89,
+      "dislikes": 4,
+      "date": 1749374123364
+    },
+    {
+      "id": 1749374133364,
+      "text": "Would be nice to have keyboard shortcuts for common actions.",
+      "likes": 34,
+      "dislikes": 2,
+      "date": 1749374133364
+    },
+    {
+      "id": 1749374143364,
+      "text": "The export feature saved me so much time! Thank you!",
+      "likes": 56,
+      "dislikes": 1,
+      "date": 1749374143364
+    },
+    {
+      "id": 1749374153364,
+      "text": "Bug report: App crashes when uploading files larger than 50MB.",
+      "likes": 78,
+      "dislikes": 0,
+      "date": 1749374153364
+    },
+    {
+      "id": 1749374163364,
+      "text": "The mobile responsiveness could be improved.",
+      "likes": 45,
+      "dislikes": 3,
+      "date": 1749374163364
+    },
+    {
+      "id": 1749374173364,
+      "text": "Documentation is well written and helpful!",
+      "likes": 92,
+      "dislikes": 1,
+      "date": 1749374173364
+    },
+    {
+      "id": 1749374183364,
+      "text": "Please add multi-language support in the next update.",
+      "likes": 67,
+      "dislikes": 2,
+      "date": 1749374183364
+    },
+    {
+      "id": 1749374193364,
+      "text": "The analytics dashboard is incredibly useful for our team.",
+      "likes": 88,
+      "dislikes": 4,
+      "date": 1749374193364
+    },
+    {
+      "id": 1749374203364,
+      "text": "Found a security vulnerability in the login system.",
+      "likes": 120,
+      "dislikes": 0,
+      "date": 1749374203364
+    },
+    {
+      "id": 1749374213364,
+      "text": "Love how fast the customer support team responds!",
+      "likes": 76,
+      "dislikes": 1,
+      "date": 1749374213364
+    },
+    {
+      "id": 1749374223364,
+      "text": "The new API documentation needs more examples.",
+      "likes": 45,
+      "dislikes": 2,
+      "date": 1749374223364
+    },
+    {
+      "id": 1749374233364,
+      "text": "Can we get a feature to customize the dashboard layout?",
+      "likes": 89,
+      "dislikes": 3,
+      "date": 1749374233364
+    },
+    {
+      "id": 1749374243364,
+      "text": "The collaboration features are game-changing for our remote team.",
+      "likes": 134,
+      "dislikes": 2,
+      "date": 1749374243364
+    },
+    {
+      "id": 1749374253364,
+      "text": "Please fix the notification system - getting duplicate alerts.",
+      "likes": 56,
+      "dislikes": 1,
+      "date": 1749374253364
+    },
+    {
+      "id": 1749374263364,
+      "text": "The new data visualization tools are incredible!",
+      "likes": 98,
+      "dislikes": 3,
+      "date": 1749374263364
+    },
+    {
+      "id": 1749374273364,
+      "text": "Would love to see integration with more third-party tools.",
+      "likes": 67,
+      "dislikes": 2,
+      "date": 1749374273364
+    }
+  ],
+  "sortBy": "likes",
+  "filterBy": "all"
+}

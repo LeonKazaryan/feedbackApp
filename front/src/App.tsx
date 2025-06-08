@@ -5,6 +5,7 @@ import { FeedbackProvider } from "./store/FeedbackContext";
 import FeedbackControls from "./components/FeedbackControls";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackImportExport from "./components/FeedbackImportExport";
+import AIFeedbackGenerator from "./components/AIFeedbackGenerator";
 import { motion } from "framer-motion";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <FeedbackControls />
           <FeedbackImportExport />
         </div>
+        <AIFeedbackGenerator />
         <FeedbackForm />
         <FeedbackList />
       </motion.div>
